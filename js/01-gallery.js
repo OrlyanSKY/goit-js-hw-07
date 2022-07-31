@@ -30,9 +30,7 @@ galleryRef.addEventListener("click", (event) => {
 
   const instance = basicLightbox.create(
     `
-    <div class="modal">
         <img src=${currentImageRef}>
-    </div>
 `
   );
 
