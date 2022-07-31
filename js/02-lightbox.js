@@ -18,10 +18,6 @@ const galleryEl = document.querySelector(".gallery");
 
 galleryEl.insertAdjacentHTML("beforeend", galleryItemsMarcup);
 
-galleryEl.addEventListener("click", (event) => {
-  event.preventDefault();
-});
-
 let gallery = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
