@@ -23,4 +23,3 @@ let gallery = new SimpleLightbox(".gallery a", {
   captionDelay: 250,
   showCounter: false,
 });
-gallery.on("show.simplelightbox", function () {});
