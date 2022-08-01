@@ -26,11 +26,14 @@ galleryRef.insertAdjacentHTML("beforeend", galleryItemsMarcup);
 galleryRef.addEventListener("click", (event) => {
   event.preventDefault();
 
-  const imageOriginalRef = event.target.dataset.source;
-
+  const imageOriginalRef = event.target;
+  console.log(imageOriginalRef.alt);
   const instance = basicLightbox.create(
     `
-        <img src=${imageOriginalRef}>
+        <img
+        src = ${imageOriginalRef.dataset.source}
+        alt = ${imageOriginalRef.alt}
+        >
 `,
     {
       onShow: () => {
@@ -42,12 +45,11 @@ galleryRef.addEventListener("click", (event) => {
     }
   );
 
-  instance.show();
-
   function onEscBtnClose(evt) {
-    console.log(evt.code);
     if (evt.code === "Escape" && instance.visible()) {
       instance.close();
     }
   }
+
+  instance.show();
 });
